@@ -1,0 +1,17 @@
+Terraform State Migration to Scale Instance Using count Without Destroying Existing Instance
+
+Task Description
+
+Currently, an infrastructure instance is provisioned using Terraform as a single resource (without count). The requirement is to scale this resource to 5 instances using the count meta-argument, while ensuring that the existing instance remains intact and is not destroyed or recreated.
+
+To achieve this, Terraform state file migration is required so the existing instance is mapped to count.index = 0.
+
+Objective
+
+Modify the Terraform configuration to use count = 5
+
+Preserve the existing instance as the first instance ([0])
+
+Prevent Terraform from destroying and recreating the existing resource
+
+Perform state file migration using Terraform state commands
